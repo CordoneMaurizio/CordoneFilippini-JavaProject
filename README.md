@@ -1,4 +1,5 @@
 # CordoneFilippini - WeatherViewer
+
 ## Progetto assegnato
 - API REFERENCE: 
   https://openweathermap.org/current ,  
@@ -40,7 +41,8 @@ il programma prevede metodi di salvataggio dei dati su file JSON posizionati nel
 
 ### /add/{nome città}
 
-oltre ad aggiungere una città alla lista di località monitorate, il comando ha lo scopo di recuperare automaticamente dati storici, fino a cinque giorni nel passato, e previsioni future, in modo da poter usufruirne immdiatamente per il calcolo di statistiche.
+API con metodo di tipo GET
+- oltre ad aggiungere una città alla lista di località monitorate, il comando ha lo scopo di recuperare automaticamente dati storici, fino a cinque giorni nel passato, e previsioni future, in modo da poter usufruirne immdiatamente per il calcolo di statistiche.
 il comando termina ritornando la list di città in formato JSON.
 
 ```json 
@@ -53,6 +55,74 @@ il comando termina ritornando la list di città in formato JSON.
 ```
 ### /remove/{nime città}
 
-il comando rimuove la città scelta andando ad escluterla dal monitoraggio e dal processo di 
+API con metodo di tipo GET 
+- il comando rimuove la città scelta andando ad escluterla dal monitoraggio e dal processo di calcolo delle statistiche.
+vengono in oltre cancellati i dati su file JSON relativi alla città.
+
+### /stats
+
+API con metodo di tipo POST
+- richiama i metodi di calcolo delle statistiche effettuate su dati storici fornendo i seguenti valori:
+umidità minima
+umidità massima
+umidità media
+L'arco temporale entro cui calcolare le statistiche è definito dal RequestBody opportunamente formattato
+
+```json 
+{
+    "inizio":"2021-01-17 00:00:00",
+    "fine":"2021-01-21 00:00:00"
+}
+```
+in caso di formattazione errata il programma ritorna un eccezione BAD_REQUEST con messaggio relativo all' errore.
+
+Questi dati sono forniti insieme all' elenco dei dati storici seguito dai dati sulle previsioni future.
+
+```json 
+{
+    "termoli": {
+        "Statistiche su arco temporale scelto": {
+            "valore minimo": 36,
+            "valore massimo": 97,
+            "media": 67.17525773195877
+        },
+        "dati storici": {
+            "list": [
+                {
+                    "umidità": 82,
+                    "data": "2021-01-21 00:00:00"
+                },
+            ]            
+        },
+        "previsioni": {
+           "list": [
+                {
+                    "umidità": 77,
+                    "data": "2021-01-21 21:00:00"
+                },
+           ]                   
+        }      
+}             
+```
+La struttura mostrata si ripete includendo i dati di tutte le città monitorate.
+in caso di rimozione di una città, non verranno visualizzati i relativi dati e statistiche.
+
+### /upload
+
+Il comando richiama metodi per l'aggiornamento dei dati storici andando ad aggiungere i dati correnti a quelli già disponibili,
+sovrascrive i dati riguardanti le previsioni future fornendone di nuovi.
+
+## Software utilizzati
+
+- Ambiente di sviluppo - Eclipse
+- Framework - Springboot
+- Software di creazione UML - UML designer
+- ambiente di test - Postman
+
+## Autori
+
+- Cordone Maurizio
+- Filippini Enrico
+
 
 

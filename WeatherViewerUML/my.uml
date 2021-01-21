@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_YBOo4FZHEeu8-Nj_oBP69g" name="NewModel">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_niYpoFZHEeu8-Nj_oBP69g" name="User">
+    <eAnnotations xmi:id="_nibs8FZHEeu8-Nj_oBP69g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details xmi:id="_nibs8VZHEeu8-Nj_oBP69g" key="Human"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_xSSdcFZHEeu8-Nj_oBP69g" name="Visualizza dati attuali">
+    <include xmi:id="_xxQKAFZKEeu8-Nj_oBP69g" addition="_epCjAFZKEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_0sQp8FZHEeu8-Nj_oBP69g" name="Modifica lista città monitorate"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_6qimQFZHEeu8-Nj_oBP69g" name="Aggiungi Città">
+    <extend xmi:id="_v_bKkFZLEeu8-Nj_oBP69g" extendedCase="_0sQp8FZHEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_-q4PMFZHEeu8-Nj_oBP69g" name="Rimuovi città">
+    <extend xmi:id="_xC72AFZLEeu8-Nj_oBP69g" extendedCase="_0sQp8FZHEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_F3wsoFZIEeu8-Nj_oBP69g" memberEnd="_F3wsoVZIEeu8-Nj_oBP69g _F3xTsFZIEeu8-Nj_oBP69g">
+    <ownedEnd xmi:id="_F3wsoVZIEeu8-Nj_oBP69g" type="_niYpoFZHEeu8-Nj_oBP69g" association="_F3wsoFZIEeu8-Nj_oBP69g"/>
+    <ownedEnd xmi:id="_F3xTsFZIEeu8-Nj_oBP69g" type="_xSSdcFZHEeu8-Nj_oBP69g" association="_F3wsoFZIEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_HJ3NsFZIEeu8-Nj_oBP69g" memberEnd="_HJ3NsVZIEeu8-Nj_oBP69g _HJ3NslZIEeu8-Nj_oBP69g">
+    <ownedEnd xmi:id="_HJ3NsVZIEeu8-Nj_oBP69g" type="_niYpoFZHEeu8-Nj_oBP69g" association="_HJ3NsFZIEeu8-Nj_oBP69g"/>
+    <ownedEnd xmi:id="_HJ3NslZIEeu8-Nj_oBP69g" type="_0sQp8FZHEeu8-Nj_oBP69g" association="_HJ3NsFZIEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_R-5dkFZIEeu8-Nj_oBP69g" name="Visualizza storico dati">
+    <include xmi:id="_7QlyQFZKEeu8-Nj_oBP69g" addition="_tysCsFZKEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Zio70FZIEeu8-Nj_oBP69g" memberEnd="_Zipi4FZIEeu8-Nj_oBP69g _Zipi4VZIEeu8-Nj_oBP69g">
+    <ownedEnd xmi:id="_Zipi4FZIEeu8-Nj_oBP69g" type="_R-5dkFZIEeu8-Nj_oBP69g" association="_Zio70FZIEeu8-Nj_oBP69g"/>
+    <ownedEnd xmi:id="_Zipi4VZIEeu8-Nj_oBP69g" type="_niYpoFZHEeu8-Nj_oBP69g" association="_Zio70FZIEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_r2g70FZIEeu8-Nj_oBP69g" name="Modifica finestra temorale di monitoraggio"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_s3sPgFZJEeu8-Nj_oBP69g" memberEnd="_s3s2kFZJEeu8-Nj_oBP69g _s3s2kVZJEeu8-Nj_oBP69g">
+    <ownedEnd xmi:id="_s3s2kFZJEeu8-Nj_oBP69g" type="_r2g70FZIEeu8-Nj_oBP69g" association="_s3sPgFZJEeu8-Nj_oBP69g"/>
+    <ownedEnd xmi:id="_s3s2kVZJEeu8-Nj_oBP69g" type="_niYpoFZHEeu8-Nj_oBP69g" association="_s3sPgFZJEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_yxJWMFZJEeu8-Nj_oBP69g" name="Visuallizza forecast e statisciche forecast">
+    <include xmi:id="_FCEd8FZMEeu8-Nj_oBP69g" addition="_DNleAFZLEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_H6VWcFZKEeu8-Nj_oBP69g" memberEnd="_H6VWcVZKEeu8-Nj_oBP69g _H6V9gFZKEeu8-Nj_oBP69g">
+    <ownedEnd xmi:id="_H6VWcVZKEeu8-Nj_oBP69g" type="_yxJWMFZJEeu8-Nj_oBP69g" association="_H6VWcFZKEeu8-Nj_oBP69g"/>
+    <ownedEnd xmi:id="_H6V9gFZKEeu8-Nj_oBP69g" type="_niYpoFZHEeu8-Nj_oBP69g" association="_H6VWcFZKEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_epCjAFZKEeu8-Nj_oBP69g" name="Chiamata API attuale">
+    <include xmi:id="_2WugUFZKEeu8-Nj_oBP69g" name="Aggiorna" addition="_tysCsFZKEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_tysCsFZKEeu8-Nj_oBP69g" name="JSON Storico dati"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_DNleAFZLEeu8-Nj_oBP69g" name="Chiamata API forecast 5Days">
+    <include xmi:id="_IagZYFZMEeu8-Nj_oBP69g" addition="_IeCrAFZLEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_IeCrAFZLEeu8-Nj_oBP69g" name="JSON forecast"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_brcUAFZLEeu8-Nj_oBP69g" name="Visualizza statistiche storico">
+    <include xmi:id="_oQYbQFZLEeu8-Nj_oBP69g" addition="_tysCsFZKEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_hMaCMFZLEeu8-Nj_oBP69g" memberEnd="_hMaCMVZLEeu8-Nj_oBP69g _hMaCMlZLEeu8-Nj_oBP69g">
+    <ownedEnd xmi:id="_hMaCMVZLEeu8-Nj_oBP69g" type="_brcUAFZLEeu8-Nj_oBP69g" association="_hMaCMFZLEeu8-Nj_oBP69g"/>
+    <ownedEnd xmi:id="_hMaCMlZLEeu8-Nj_oBP69g" type="_niYpoFZHEeu8-Nj_oBP69g" association="_hMaCMFZLEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_YTnAEFZMEeu8-Nj_oBP69g" name="Aggiornamento manuale">
+    <include xmi:id="_eDvysFZMEeu8-Nj_oBP69g" addition="_DNleAFZLEeu8-Nj_oBP69g"/>
+    <include xmi:id="_iWsOkFZMEeu8-Nj_oBP69g" addition="_epCjAFZKEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_b4gDIFZMEeu8-Nj_oBP69g" memberEnd="_b4gDIVZMEeu8-Nj_oBP69g _b4gDIlZMEeu8-Nj_oBP69g">
+    <ownedEnd xmi:id="_b4gDIVZMEeu8-Nj_oBP69g" type="_YTnAEFZMEeu8-Nj_oBP69g" association="_b4gDIFZMEeu8-Nj_oBP69g"/>
+    <ownedEnd xmi:id="_b4gDIlZMEeu8-Nj_oBP69g" type="_niYpoFZHEeu8-Nj_oBP69g" association="_b4gDIFZMEeu8-Nj_oBP69g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_dCx9kFZPEeu8-Nj_oBP69g" name="Main" visibility="public"/>
+</uml:Model>

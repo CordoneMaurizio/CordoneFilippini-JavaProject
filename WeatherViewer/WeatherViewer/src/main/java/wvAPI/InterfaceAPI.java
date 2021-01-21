@@ -6,7 +6,7 @@ public interface InterfaceAPI {
 
 	public JSONObject callCurrent();
 	
-	public JSONObject callHistory(String data);
+	public JSONObject callHistory(int i);
 	
 	public JSONObject callForecast();
 	

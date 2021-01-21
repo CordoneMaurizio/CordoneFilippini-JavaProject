@@ -10,7 +10,7 @@ public class UnixConverter {
 	
 	
 	
-	public static Long timeToUnix(String date) {
+	public Long timeToUnix(String date) {
 		long dataLeggibile = 0L;
 		try {
 			DateFormat d = DateFormat.getDateInstance(DateFormat.SHORT);
@@ -22,7 +22,7 @@ public class UnixConverter {
 		return dataLeggibile;
 	}
 	
-	public static String unixToDate(Long date) {
+	public String unixToDate(Long date) {
 		long unixSeconds = 1372339860;
 		Date unixDate = new Date(unixSeconds); 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  

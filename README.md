@@ -22,4 +22,22 @@ Questa versione del programma si concentra su dati e statistiche riguardanti i s
     <h6> idea iniziale dei casi d'uso
     </h6>
   <img>
-  
+ </p>
+ 
+## Funzionamento
+il framework di springboot permette al programma di interfacciarsi attraverso web server di tipo tomcat e di rispondere ad API con rotte predefinite:
+| comando | descrizione |
+|----|----------|
+| /add/{nome città} | permette di aggiungere una nuova città alla lista di località monitorate |
+| /remove/{nome città} | rimuove una città dalla lista |
+| /list | visualizza la lista di città monitorate |
+| /stats | visualizza per ogni città monitorata, dati storici e statistiche. ritorna inoltre dati di previsioni future |
+| /update | aggiorna i dati a disposizione andando a chiamare nuovamente le API esterne |
+| /call/{nome città} | visualizza dati metereologici di una città richiesta senza aggiungerla alla lista |
+| /call | ( rotta utilizzata durante  primi test) visualizza i dati metereologici di Termoli, cittadina marittima molisana |
+
+il programma prevede metodi di salvataggio dei dati su file JSON posizionati nella cartella
+
+### /add/{nome città}
+oltre ad aggiungere una città alla lista di località monitorate, il comando ha lo scopo di recuperare automaticamente dati storici, fino a cinque giorni nel passato, e previsioni future, in modo da poter usufruirne immdiatamente per il calcolo di statistiche.
+

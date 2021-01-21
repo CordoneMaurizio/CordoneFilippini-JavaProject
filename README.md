@@ -18,7 +18,7 @@ Il programma offre all' utente la possibilià di ottenere informazioni riguardan
 Questa versione del programma si concentra su dati e statistiche riguardanti i soli valori di umidità ottenute tramite chiamata ad API esterne fornite dalla piattaforma https://openweathermap.org . 
 
 <p>
-  <img src = "https://github.com/CordoneMaurizio/CordoneFilippini-JavaProject/blob/main/WeatherViewer/OpenWheather_UseCase.jpg">
+  <img src = "https://github.com/CordoneMaurizio/CordoneFilippini-JavaProject/blob/main/WeatherViewerUML/OpenWheather_UseCase.jpg">
     <h6> idea iniziale dei casi d'uso
     </h6>
   <img>

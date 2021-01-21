@@ -36,8 +36,23 @@ il framework di springboot permette al programma di interfacciarsi attraverso we
 | /call/{nome città} | visualizza dati metereologici di una città richiesta senza aggiungerla alla lista |
 | /call | ( rotta utilizzata durante  primi test) visualizza i dati metereologici di Termoli, cittadina marittima molisana |
 
-il programma prevede metodi di salvataggio dei dati su file JSON posizionati nella cartella
+il programma prevede metodi di salvataggio dei dati su file JSON posizionati nella cartella "WeatherViewer/WeatherViewer/JSONdati".
 
 ### /add/{nome città}
+
 oltre ad aggiungere una città alla lista di località monitorate, il comando ha lo scopo di recuperare automaticamente dati storici, fino a cinque giorni nel passato, e previsioni future, in modo da poter usufruirne immdiatamente per il calcolo di statistiche.
+il comando termina ritornando la list di città in formato JSON.
+
+```json 
+{
+  "città monitorate" :[
+    "Roma"
+    "Termoli"
+  ]  
+}
+```
+### /remove/{nime città}
+
+il comando rimuove la città scelta andando ad escluterla dal monitoraggio e dal processo di 
+
 

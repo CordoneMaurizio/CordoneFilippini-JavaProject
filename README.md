@@ -16,3 +16,10 @@
 WeatherViewer fornisce opzioni di monitoraggio di dati metereologici.
 Il programma offre all' utente la possibilià di ottenere informazioni riguardanti una lista di località da lui scelte.
 Questa versione del programma si concentra su dati e statistiche riguardanti i soli valori di umidità ottenute tramite chiamata ad API esterne fornite dalla piattaforma https://openweathermap.org . 
+
+<p>
+  <img src = "https://github.com/CordoneMaurizio/CordoneFilippini-JavaProject/blob/main/WeatherViewer/OpenWheather_UseCase.jpg">
+    <h6> idea iniziale dei casi d'uso
+    </h6>
+  <img>
+  

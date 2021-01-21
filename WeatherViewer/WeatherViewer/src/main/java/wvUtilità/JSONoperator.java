@@ -8,7 +8,9 @@ import java.io.IOException;
 
 import org.json.simple.*;
 import org.json.simple.parser.JSONParser;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.web.server.ResponseStatusException;
 
 
 /*@uthor CordoneMaurizio
@@ -29,7 +31,7 @@ public class JSONoperator {
             jsonFileWriter.close();
 
         } catch (IOException e) {
-            e.printStackTrace();
+        	e.printStackTrace();
         }
     }
 	

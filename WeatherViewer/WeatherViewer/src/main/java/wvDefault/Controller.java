@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 public class Controller {
@@ -34,13 +35,15 @@ public class Controller {
 	}
 
 	@GetMapping("/add/{cityName}")
-	public void addCity(@PathVariable("cityName") String cityName) {
+	public JSONObject addCity(@PathVariable("cityName") String cityName) {
 		lista.add(cityName);
+		return lista.getCityList();
 	}
 	
 	@GetMapping("/remove/{cityName}")
-	public void removeCity(@PathVariable("cityName") String cityName) {
+	public JSONObject removeCity(@PathVariable("cityName") String cityName) {
 		lista.remove(cityName);
+		return lista.getCityList();
 	}
 	
 	@PostMapping("/stats")
@@ -50,7 +53,7 @@ public class Controller {
 	
 	@GetMapping("/update")
 	public void update() {
-		
+		lista.update();
 	}
 
 }

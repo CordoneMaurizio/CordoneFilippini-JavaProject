@@ -9,8 +9,9 @@ import java.net.URLConnection;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
-
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.web.server.ResponseStatusException;
 
 @Component
 public class APIOpenWeather implements InterfaceAPI{
@@ -28,18 +29,16 @@ public class APIOpenWeather implements InterfaceAPI{
 
 	private void setCoord() {
 		JSONObject obj = callCurrent();
+		if(!obj.containsKey("coord")) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"città non trovata");
+		}
 		JSONObject coord = (JSONObject)obj.get("coord");
 		this.lat = (Double) coord.get("lat");
 		this.lon = (Double) coord.get("lon");
 
 	}
 	
-	public void getInfo() {
-		System.out.println(
-				"Nome città:     " + città + "\n" + "-- latitudine:  " + lat + "\n" + "-- longitudine: " + lon + "\n");
-
-	}
-
+	
 	public JSONObject callCurrent() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -56,6 +55,19 @@ public class APIOpenWeather implements InterfaceAPI{
 		lettore.close();
 			
 		obj= (JSONObject)JSONValue.parseWithException(testo);
+
+		if(obj.containsKey("cod")) {
+				String cod;
+				if (obj.get("cod") instanceof Long) {
+					cod = String.valueOf((Long)(obj.get("cod")));
+				}else {
+					cod = (String)(obj.get("cod"));
+				}
+				
+				if(!cod.equals("200")) {
+					throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"città non trovata");
+				}
+		}
 		
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -87,6 +99,19 @@ public class APIOpenWeather implements InterfaceAPI{
 				lettore.close();	
 				obj = (JSONObject)JSONValue.parseWithException(testo);
 				
+				if(obj.containsKey("cod")) {
+						String cod;
+						if (obj.get("cod") instanceof Long) {
+							cod = String.valueOf((Long)(obj.get("cod")));
+						}else {
+							cod = (String)(obj.get("cod"));
+						}
+						
+						if(!cod.equals("200")) {
+							throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"città non trovata");
+						}
+				}
+				
 					
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -114,7 +139,19 @@ public class APIOpenWeather implements InterfaceAPI{
 			lettore.close();
 		
 			obj = (JSONObject)JSONValue.parseWithException(testo);
-			
+
+			if(obj.containsKey("cod")) {
+					String cod;
+					if (obj.get("cod") instanceof Long) {
+						cod = String.valueOf((Long)(obj.get("cod")));
+					}else {
+						cod = (String)(obj.get("cod"));
+					}
+					
+					if(!cod.equals("200")) {
+						throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"città non trovata");
+					}
+			}
 			
 		} catch (IOException e) {
 			e.printStackTrace();
